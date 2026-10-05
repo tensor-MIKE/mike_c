@@ -1,0 +1,7 @@
+
+[submodule "scripts/external/modarith"]
+	path = scripts/external/modarith
+	url = https://github.com/mcarrickscott/modarith.git
+[submodule "scripts/external/addchain"]
+	path = scripts/external/addchain
+	url = https://github.com/mmcloughlin/addchain

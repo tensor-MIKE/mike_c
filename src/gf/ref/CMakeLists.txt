@@ -1,0 +1,3 @@
+set(LVLX_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lvlx)
+
+include(${SELECT_MIKE_VARIANT})

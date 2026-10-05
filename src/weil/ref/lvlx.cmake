@@ -1,0 +1,14 @@
+set(SOURCE_FILES_WEIL_GENERIC_REF
+    ${LVLX_DIR}/bases.c
+    ${LVLX_DIR}/gluing.c
+    ${LVLX_DIR}/invariants.c
+    ${LVLX_DIR}/mike_dim4_chain.c
+)
+
+add_library(${LIB_WEIL_${SVARIANT_UPPER}} STATIC ${SOURCE_FILES_WEIL_GENERIC_REF})
+target_link_libraries(${LIB_WEIL_${SVARIANT_UPPER}} ${LIB_PRECOMP_${SVARIANT_UPPER}} ${LIB_GF_${SVARIANT_UPPER}} ${LIB_THETA_${SVARIANT_UPPER}} ${LIB_EC_${SVARIANT_UPPER}})
+target_include_directories(${LIB_WEIL_${SVARIANT_UPPER}} PRIVATE ${INC_COMMON} ${INC_PRECOMP_${SVARIANT_UPPER}} ${INC_PUBLIC} ${INC_GF} ${INC_GF_${SVARIANT_UPPER}} ${INC_EC} ${INC_THETA} ${INC_WEIL})
+target_compile_options(${LIB_WEIL_${SVARIANT_UPPER}} PRIVATE ${C_OPT_FLAGS})
+target_compile_definitions(${LIB_WEIL_${SVARIANT_UPPER}} PUBLIC MIKE_VARIANT=${SVARIANT_LOWER})
+
+add_subdirectory(test)
