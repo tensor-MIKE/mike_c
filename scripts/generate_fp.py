@@ -43,7 +43,7 @@ def build_from_parameters(f,c,name, write=True,conservative=False,check_primalit
     # Arithmetic Generation
 
     prefix = f'../src/precomp/ref/{name}/'
-    sk_length, security_bits = compute_constants_at_fp_gen(f, c, hd_margin, conservative=args.conservative)
+    sk_length, security_bits = compute_constants_at_fp_gen(f, c, hd_margin, conservative=conservative)
     # Writing CMakeLists.txt wherever necessary in modules (gf, ec, theta, weil, nike)
     os.system(f"mkdir -p ../src/precomp/ref/{name}")
     os.system(f"mkdir -p ../src/precomp/ref/{name}/include")
